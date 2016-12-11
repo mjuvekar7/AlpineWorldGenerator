@@ -34,7 +34,7 @@ public class SnowMountRasterizer implements WorldRasterizer {
     @Override
     public void initialize() {
         dirt = CoreRegistry.get(BlockManager.class).getBlock("Core:Dirt");
-        snow = CoreRegistry.get(BlockManager.class).getBlock("AlpineWorldGen:Snowball");
+        snow = CoreRegistry.get(BlockManager.class).getBlock("Core:Snowball");
     }
 
     @Override

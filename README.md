@@ -15,4 +15,4 @@ with tall mountains with snow-caps and deep valleys with frozen lakes.
 
 ![sc1](/images/valley.png)
 ![sc2](/images/snow_caps.png)
-![sc3](/images/hill.png)
+![sc3](/images/view.png)

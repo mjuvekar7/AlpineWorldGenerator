@@ -36,7 +36,7 @@ public class AlpineWorldGenerator extends BaseFacetedWorldGenerator {
                 .addProvider(new SeaLevelProvider(0))
                 .addProvider(new MountainsProvider())
                 .addProvider(new SnowMoundProvider())
-                .addRasterizer(new SnowMountRasterizer())
+                .addRasterizer(new SnowMoundRasterizer())
                 .addRasterizer(new AplineWorldGeneratorRasterizer())
                 .addPlugins();
     }

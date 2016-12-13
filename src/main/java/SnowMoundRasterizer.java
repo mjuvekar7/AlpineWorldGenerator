@@ -27,13 +27,11 @@ import org.terasology.world.generation.WorldRasterizer;
 
 import java.util.Map;
 
-public class SnowMountRasterizer implements WorldRasterizer {
-    Block dirt;
+public class SnowMoundRasterizer implements WorldRasterizer {
     Block snow;
 
     @Override
     public void initialize() {
-        dirt = CoreRegistry.get(BlockManager.class).getBlock("Core:Dirt");
         snow = CoreRegistry.get(BlockManager.class).getBlock("Core:Snowball");
     }
 
@@ -42,12 +40,11 @@ public class SnowMountRasterizer implements WorldRasterizer {
         SnowMoundFacet snowMoundFacet = chunkRegion.getFacet(SnowMoundFacet.class);
 
         for (Map.Entry<BaseVector3i, SnowMound> entry : snowMoundFacet.getWorldEntries().entrySet()) {
-            Vector3i centerHousePosition = new Vector3i(entry.getKey());
-            int extent = entry.getValue().getExtent();
-            centerHousePosition.add(0, extent, 0);
-            Region3i walls = Region3i.createFromCenterExtents(centerHousePosition, extent);
+            Vector3i centerMoundPosition = new Vector3i(entry.getKey());
+            Vector3i extent = entry.getValue().getExtent();
+            Region3i moundRegion = Region3i.createFromCenterExtents(centerMoundPosition, extent);
 
-            for (Vector3i newBlockPosition : walls) {
+            for (Vector3i newBlockPosition : moundRegion) {
                 if (chunkRegion.getRegion().encompasses(newBlockPosition)) {
                     chunk.setBlock(ChunkMath.calcBlockPos(newBlockPosition), snow);
                 }

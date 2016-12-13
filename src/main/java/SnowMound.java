@@ -14,8 +14,10 @@
  * limitations under the License.
  */
 
+import org.terasology.math.geom.Vector3i;
+
 public class SnowMound {
-    public int getExtent() {
-        return 1;
+    public Vector3i getExtent() {
+        return new Vector3i(1, 0, 1);
     }
 }

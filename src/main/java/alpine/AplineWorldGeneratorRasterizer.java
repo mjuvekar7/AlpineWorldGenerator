@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package alpine;
+
 import org.terasology.math.ChunkMath;
 import org.terasology.math.geom.Vector3i;
 import org.terasology.registry.CoreRegistry;
@@ -30,7 +32,7 @@ public class AplineWorldGeneratorRasterizer implements WorldRasterizer {
     private Block snow;
 
     // the height above which mountains will be snow covered
-    private int snowLine = 130;
+    private final int snowLine = 130;
 
     @Override
     public void initialize() {
@@ -42,7 +44,7 @@ public class AplineWorldGeneratorRasterizer implements WorldRasterizer {
     @Override
     public void generateChunk(CoreChunk chunk, Region chunkRegion) {
         SurfaceHeightFacet surfaceHeightFacet = chunkRegion.getFacet(SurfaceHeightFacet.class);
-        for(Vector3i position: chunkRegion.getRegion()) {
+        for (Vector3i position: chunkRegion.getRegion()) {
             float surfaceHeight = surfaceHeightFacet.getWorld(position.x(), position.z());
             if (position.y() < surfaceHeight - 1) {
                 chunk.setBlock(ChunkMath.calcBlockPos(position), dirt);

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package alpine;
+
 import org.terasology.core.world.generator.facetProviders.SeaLevelProvider;
 import org.terasology.engine.SimpleUri;
 import org.terasology.registry.In;
@@ -22,12 +24,14 @@ import org.terasology.world.generation.WorldBuilder;
 import org.terasology.world.generator.RegisterWorldGenerator;
 import org.terasology.world.generator.plugin.WorldGeneratorPluginLibrary;
 
-@RegisterWorldGenerator(id = "AlpineWorldGenerator", displayName = "Alpine World Generator")
+@RegisterWorldGenerator(id = "alpine.AlpineWorldGenerator", displayName = "Alpine World Generator")
 public class AlpineWorldGenerator extends BaseFacetedWorldGenerator {
     @In
     private WorldGeneratorPluginLibrary worldGeneratorPluginLibrary;
 
-    public AlpineWorldGenerator(SimpleUri uri) { super(uri); }
+    public AlpineWorldGenerator(SimpleUri uri) {
+        super(uri);
+    }
 
     @Override
     protected WorldBuilder createWorld() {

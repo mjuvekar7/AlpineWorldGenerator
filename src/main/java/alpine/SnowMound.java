@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package alpine;
+
 import org.terasology.math.geom.Vector3i;
 
 public class SnowMound {

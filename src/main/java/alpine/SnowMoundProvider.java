@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package alpine;
+
 import org.terasology.math.TeraMath;
 import org.terasology.math.geom.Rect2i;
 import org.terasology.utilities.procedural.Noise;
@@ -44,8 +46,8 @@ public class SnowMoundProvider implements FacetProvider {
             for (int wx = worldRegion.minX(); wx <= worldRegion.maxX(); wx++) {
                 int surfaceHeight = TeraMath.floorToInt(surfaceHeightFacet.getWorld(wx, wz));
 
-                if (surfaceHeight >= facet.getWorldRegion().minY() &&
-                        surfaceHeight <= facet.getWorldRegion().maxY()) {
+                if (surfaceHeight >= facet.getWorldRegion().minY()
+                        && surfaceHeight <= facet.getWorldRegion().maxY()) {
 
                     if (noise.noise(wx, wz) > 0.99) {
                         facet.setWorld(wx, surfaceHeight, wz, new SnowMound());
